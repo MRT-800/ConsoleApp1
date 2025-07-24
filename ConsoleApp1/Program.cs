@@ -13,35 +13,28 @@ namespace ConsoleApp1
 }*/
 
 
+
 namespace ConsoleApp1
 {
+
+    internal class Name
+    {
+        public int age = 20;
+        public string name = "ABHISHEK";
+        public string address = "Kathmandu";
+        public double height = 5.5;
+        public bool isStudent = true;
+    }
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            var person = new Name();
-            person.Display();
-
-            Console.ReadKey();
+            Name person = new Name();
+            Console.WriteLine(person.isStudent);
+            Console.WriteLine($"NAME : {person.name}, AGE: {person.age}, ADDRESS: {person.address}");
         }
     }
 
-    internal class Name
-    {
-        private  int age = 20;
-        private  string name = "ABHISHEK";
-        private  string address = "Kathmandu";
-        private  double height = 5.5;
-        private  bool isStudent = true;
-
-        public void Display()
-        {
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Age: " + age);
-            Console.WriteLine("Address: " + address);
-            Console.WriteLine("Height: " + height);
-            Console.WriteLine("Is Student: " + isStudent);
-        }
-    }
 }
 
