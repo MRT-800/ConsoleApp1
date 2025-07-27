@@ -150,15 +150,15 @@ namespace consoleApp1
 
 
 
-
+/*
 using System;
 class Program
 {
     public static void Main(string[] args)
     {
-        /* int age = 20;
+         int age = 20;
          string name = Console.ReadLine();
-         Console.WriteLine($"YOUR NAME IS : {name}, Age: {age}");*/
+         Console.WriteLine($"YOUR NAME IS : {name}, Age: {age}");
         Console.WriteLine("hello");
 
         long a = 123456;// int 32
@@ -197,3 +197,254 @@ class Program
 
     }
 }
+
+*/
+
+/*
+using System;
+using System.ComponentModel;
+namespace ConsoleApp1{
+class program
+{
+    static void Main(string[] args)
+    {
+        bool value = true;
+            bool isman = true;
+            Console.WriteLine(isman);
+
+            int a = 20;
+            a++;
+            a += 1;
+            Console.WriteLine(a);
+
+            Char c= 'A'; // Character data type
+            char d = 'B'; // Character data type
+            Console.WriteLine(c+d);       //Ascii value of A is 65 and B is 66 
+            Console.WriteLine(65+66); 
+
+        }
+}
+
+}*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c;
+            a = 10; b = 2;
+            c = a % 3; // Modulus operator gives the remainder of the division
+            Console.WriteLine("remainder :" + c);
+
+
+            var name = "Abhishek"; // var keyword is used to declare a variable without specifying its type(dont need to specify int or double or string)
+            var d = 10.5; // d is a double type variable
+            var e = 'e'; // e is a char type variable
+            var isstudent = true; // f is a bool type variable
+            var l = 1234567L; // l is a long type variable
+            var money = 100.50m; // money is a decimal type variable, m at the end indicates it's a decimal
+
+            Console.WriteLine($"Name: {name}, d: {d}, e: {e}, is he student: {isstudent}, long : {l}, decimal: {money}");
+
+
+            const int vat = 15; // const keyword is used to declare a constant variable, its value cannot be changed
+            Console.WriteLine($"VAT is : {vat}");
+            //vat = 20; // This will give an error because vat is a constant variable and its value cannot be changed
+            Console.WriteLine(166 * (vat / 100D));
+        }
+    }
+}
+*/
+
+/*
+using System;
+ namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             var a = Convert.ToDouble(Console.ReadLine());
+            var b = Convert.ToDouble(Console.ReadLine());
+            var c = (float)(a / b);
+            Console.WriteLine($"{c:F10}");
+
+        }
+    }
+}
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter Two no. :");
+            var a = Convert.ToInt32(Console.ReadLine());
+            var b = Convert.ToInt32(Console.ReadLine());
+
+            int result = a * b;
+            while (true)
+            {
+                Console.WriteLine("guess the multiplication of two no :");
+                int guess = Convert.ToInt32(Console.ReadLine());
+
+                if (guess == result)
+                {
+                    Console.WriteLine("you guessed correct");
+                    break;
+                }
+                else if (guess > result)
+                {
+                    Console.WriteLine("you guessed high");
+                }
+                else
+                {
+                    Console.WriteLine("you guessed low");
+
+                }
+            }
+        }
+    }
+}*/
+
+
+/*
+
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your age");
+            var age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Do you have a driving licence? (y/n)");
+            var input = Console.ReadLine();
+            var hasit = input == "y";
+
+             if (age >= 80)
+            {
+                Console.WriteLine($"Too old, please don't Drive ");
+            }
+            else if (age >= 18 && hasit)
+            {
+                Console.WriteLine($"Drive");
+            }
+            else if (age >= 18 && !hasit)
+            {
+                Console.WriteLine($"You can apply for a driving licence");
+            }
+            else if (age < 18)
+            {
+                Console.WriteLine($"You cannot drive yet.");
+            }
+            else
+            {
+                Console.WriteLine($"Please enter correct input ");
+            }
+        }
+    }
+}
+
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter Day : ");
+            var day = Convert.ToInt32(Console.ReadLine());
+
+            switch(day){
+                case 1:
+                    Console.WriteLine("Sunday (Rush Hour)");
+                    break;
+                case 2:
+                    Console.WriteLine("Monday (Rush Hour)");
+                    break;
+                case 3:
+                    Console.WriteLine("Tuesday (Busy Schedule)");
+                    break;
+                case 4:
+                    Console.WriteLine("Wednesday (Busy Schedule)");
+                    break;
+                case 5:
+                    Console.WriteLine("Thrusday (Half Day)");
+                    break;
+                case 6:
+                case 7:
+                    Console.WriteLine("Weekends");
+                    break;
+                default:
+                    Console.WriteLine("Please, enter correct input !!! ");
+                    break;
+
+            }
+
+        }
+    }
+}
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*Console.WriteLine("Enter a no:");
+             var a =Convert.ToInt32(Console.ReadLine());
+             Console.WriteLine();*/
+
+            /*for (int i=0; i<=a; i++)
+            {
+                Console.WriteLine("hello"+" "+i);
+
+            }*/
+
+            /* do
+             {
+                 Console.WriteLine("hello");//infinite loop if a is 0
+             } while (a == 0);
+            */
+
+            /*
+            int a = 0;
+            do
+            {
+                Console.Write("Enter your age: ");
+                a = Convert.ToInt32(Console.ReadLine());
+                if (a < 18)
+                {
+                    Console.WriteLine("you are young");
+                }
+            } while (a < 18);
+
+            Console.WriteLine("Your age is 18 or above.");
+
+
+        }
+    }
+}
+
+*/
+
