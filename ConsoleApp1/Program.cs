@@ -445,6 +445,37 @@ namespace ConsoleApp1
         }
     }
 }
-
 */
 
+
+
+using System;
+using System.Data.SqlTypes;
+using System.Threading.Channels;
+
+namespace ConsoleApp1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a no.");
+            var a = Convert.ToInt32(Console.ReadLine());
+            String age = a >= 20 ? "You can Buy Drinks" : "Invalid age";
+            Console.WriteLine(age);
+
+            Console.WriteLine(a >= 100 ? "Died" : "Ok");//we can write it directly here
+
+            double div = 22D / 7D;
+            Console.WriteLine(div);
+            div = -Math.PI;
+            Console.WriteLine($"{div:F10}");
+
+            //OR
+
+            Console.WriteLine("Value of PI is : {0:0.000}", div);
+            Console.WriteLine(div.ToString("C"));    // C is used to format the number as currency
+
+        }
+    }
+}
