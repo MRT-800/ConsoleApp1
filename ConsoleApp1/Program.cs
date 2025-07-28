@@ -415,40 +415,40 @@ namespace ConsoleApp1
              var a =Convert.ToInt32(Console.ReadLine());
              Console.WriteLine();*/
 
-            /*for (int i=0; i<=a; i++)
-            {
-                Console.WriteLine("hello"+" "+i);
+/*for (int i=0; i<=a; i++)
+{
+    Console.WriteLine("hello"+" "+i);
 
-            }*/
+}*/
 
-            /* do
-             {
-                 Console.WriteLine("hello");//infinite loop if a is 0
-             } while (a == 0);
-            */
+/* do
+ {
+     Console.WriteLine("hello");//infinite loop if a is 0
+ } while (a == 0);
+*/
 
-            /*
-            int a = 0;
-            do
-            {
-                Console.Write("Enter your age: ");
-                a = Convert.ToInt32(Console.ReadLine());
-                if (a < 18)
-                {
-                    Console.WriteLine("you are young");
-                }
-            } while (a < 18);
-
-            Console.WriteLine("Your age is 18 or above.");
-
-
-        }
+/*
+int a = 0;
+do
+{
+    Console.Write("Enter your age: ");
+    a = Convert.ToInt32(Console.ReadLine());
+    if (a < 18)
+    {
+        Console.WriteLine("you are young");
     }
+} while (a < 18);
+
+Console.WriteLine("Your age is 18 or above.");
+
+
+}
+}
 }
 */
 
 
-
+/*
 using System;
 using System.Data.SqlTypes;
 using System.Threading.Channels;
@@ -479,3 +479,144 @@ namespace ConsoleApp1
         }
     }
 }
+*/
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool success = true;
+            while (success)
+            { 
+            Console.WriteLine("Enter a no:");
+            string no = Console.ReadLine();
+            int n = 0;
+            if (int.TryParse(no, out n))
+            {
+                 //success =fales ;  //It also can  Exit the loop if input is valid
+                    Console.WriteLine("You entered a valid number: " + n);
+                    break; // Exit the loop if input is valid
+
+                }
+            else
+            {
+                Console.WriteLine("Invalid input, please enter a valid number.");
+            
+            
+            }
+
+            }
+        }
+    }
+}*/
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter Two no:");
+            string no = Console.ReadLine();
+            String no2 = Console.ReadLine();
+            bool inp=int.TryParse(no, out int n); // TryParse returns true if conversion is successful, false otherwise
+           bool inp2= int .TryParse(no2, out int n2);
+
+            if(inp && inp2)
+            {
+                Console.WriteLine("The multiplication of "+n+" And "+ n2+ " is :"+n*n2 );
+            }
+            else {                 Console.WriteLine("Invalid input, please enter valid numbers.");  }
+        }
+    }
+}
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a no:");
+            string no = Console.ReadLine();
+            bool isno = int.TryParse(no, out int n); // TryParse returns true if conversion is successful, false otherwise
+
+            if (isno)
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    Console.WriteLine(i + " * " + n + " = " + i * n);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input, please enter a valid number.");
+
+            }
+        }
+    }
+}
+
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a no:");
+            string no = Console.ReadLine();
+            bool isno = int.TryParse(no, out int n);
+            if (isno)
+            {
+                for (int i = 1; i <= n; i++)
+                {
+                    if (i % 3 == 0 && i % 5 == 0)
+                    {
+                        Console.WriteLine("FIZZBUZZ");
+                    }
+                    else if (i % 3 == 0)
+                    {
+                        Console.WriteLine("FIZZ");
+                    }
+                    else if (i % 5 == 0)
+                    {
+                        Console.WriteLine("BUZZ");
+                    }
+                    else
+                    {
+                        Console.WriteLine(i);
+                    }
+
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input, please enter a valid number.");
+            }
+        }
+    }
+} 
+*/
+
+
+
+
+
+
+
