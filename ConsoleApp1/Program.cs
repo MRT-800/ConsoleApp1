@@ -615,8 +615,135 @@ namespace ConsoleApp1
 */
 
 
+/*
+using System;
+    namespace ConsoleApp1
+{
+    public class program
+    {
+        static void Main(string[] args)
+           
+        {
+            string name =@" ""Android"" ";
+           Console.WriteLine("hello\"this is it\" ");
+            Console.WriteLine(name);
+            Console.WriteLine("your name is "+name + "\nyou are 1 year old\t"+"you are bot");
+            int age = 20;
+            Console.WriteLine("your age is {0} and your name is {1}", age, name);
+            Console.WriteLine($"your name is {name} and age is {age}, speed 100 terahertz, memory 100 zetabyte");
+        }
+    }
+}
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter 2 names: ");
+            string name = Console.ReadLine();
+            string nom= Console.ReadLine();
+            // Compare two strings
+            if (name.Equals(nom))
+            {
+                Console.WriteLine("same name");
+            }
+            else
+            {
+                Console.WriteLine("not same name");
+            }
+
+
+        }
+    }
+}
+
+*/
+
+
+/*
+
+using System;
+namespace ConsoleApp1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter 2 names: ");
+            string name = Console.ReadLine();
+            string nom = Console.ReadLine();
+            // Compare two strings
+            if (!name.Equals(nom))
+            {
+                Console.WriteLine("different");
+            }
+            else
+            {
+                Console.WriteLine(" same name");
+            }
+
+
+        }
+    }
+}
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter a names: ");
+            string name = Console.ReadLine();
+           
+            
+            if (name!=String.Empty)
+            {
+                Console.WriteLine($"{name}");
+            }
+            else
+            {
+                Console.WriteLine($"Hello, enter name ");
+            }
+
+
+        }
+    }
+}
+*/
 
 
 
+using System;
 
+namespace ConsoleApp1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("=== DEBUG VERSION 1 ==="); // Add this line
+            Console.WriteLine("Enter a name: ");
+            string name = Console.ReadLine();
 
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Console.WriteLine("Empty");
+            }
+            else
+            {
+                Console.WriteLine($"Hello {name}");
+            }
+        }
+    }
+}
