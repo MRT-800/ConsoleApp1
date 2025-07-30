@@ -723,7 +723,7 @@ namespace ConsoleApp1
 */
 
 
-
+/*
 using System;
 
 namespace ConsoleApp1
@@ -747,3 +747,236 @@ namespace ConsoleApp1
         }
     }
 }
+*/
+
+
+/*
+using System;
+using System.Threading;
+
+namespace DeathClock
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Title = "Death Clock";
+            Console.WriteLine("Enter your name");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Enter your birth date:");
+
+            Console.Write("Year (e.g. 2002): ");
+            int year = int.Parse(Console.ReadLine());
+
+            Console.Write("Month (1-12): ");
+            int month = int.Parse(Console.ReadLine());
+
+            Console.Write("Day (1-31): ");
+            int day = int.Parse(Console.ReadLine());
+
+            DateTime birthDate;
+            try
+            {
+                birthDate = new DateTime(year, month, day);
+            }
+            catch
+            {
+                Console.WriteLine(" Invalid date entered.");
+                return;
+            }
+            Console.WriteLine("enter life expetency of your country");
+            int lifeExpectancy = Convert.ToInt32(Console.ReadLine());
+            int bonusYears = 0;
+
+            Console.Write("Do you smoke? (yes/no): ");
+            if (Console.ReadLine().ToLower() == "yes") bonusYears -= 10;
+
+            Console.Write("Do you exercise regularly? (yes/no): ");
+            if (Console.ReadLine().ToLower() == "yes") bonusYears += 5;
+
+            Console.Write("Do you sleep 7-8 hrs daily? (yes/no): ");
+            if (Console.ReadLine().ToLower() == "yes") bonusYears += 2;
+            else bonusYears -= 2;
+
+            Console.Write("Are you often stressed? (yes/no): ");
+            if (Console.ReadLine().ToLower() == "yes") bonusYears -= 3;
+
+            Console.Write("Did your parents/grandparents live 85+? (yes/no): ");
+            if (Console.ReadLine().ToLower() == "yes") bonusYears += 3;
+
+            int finalAge = lifeExpectancy + bonusYears;
+            DateTime deathDate = birthDate.AddYears(finalAge);
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Your estimated death date: " + deathDate);
+
+            while (true)
+            {
+                TimeSpan timeLeft = deathDate - DateTime.Now;
+
+                if (timeLeft.TotalSeconds <= 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Clear();
+                    Console.WriteLine(" Your time has come...");
+                    Console.WriteLine(@"
+       _______
+    .-'       `-.
+   /           \
+   |     RIP       |
+   |            |
+   |      |
+   |            |
+   |____________|
+  //            \\
+ ^^              ^^
+"+"    "+name);
+                    break;
+                }
+
+                Console.SetCursorPosition(0, 2);
+                Console.WriteLine(" Seconds left to live: " + $"{(long)timeLeft.TotalSeconds:N0}      ");
+
+                Thread.Sleep(1000);
+            }
+
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
+        }
+    }
+}
+
+*/
+
+
+//GPT version code .........
+
+using System;
+using System.Globalization;
+using System.Threading;
+
+namespace DeathClock
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Title = "☠️ Live Death Clock Countdown ☠️";
+
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name.Trim().ToLower());
+
+            Console.WriteLine("\nEnter your birth date:");
+            int year = ReadInt("Year (e.g. 2002): ", 1900, DateTime.Now.Year);
+            int month = ReadInt("Month (1-12): ", 1, 12);
+            int day = ReadInt("Day (1-31): ", 1, 31);
+
+            DateTime birthDate;
+            try
+            {
+                birthDate = new DateTime(year, month, day);
+            }
+            catch
+            {
+                Console.WriteLine("❌ Invalid date entered.");
+                return;
+            }
+
+            int lifeExpectancy = ReadInt("\nEnter life expectancy of your country: ", 30, 130);
+            int bonusYears = 0;
+
+            bonusYears += AskYesNo("Do you smoke?") ? -10 : 0;
+            bonusYears += AskYesNo("Do you exercise regularly?") ? 5 : 0;
+            bonusYears += AskYesNo("Do you sleep 7-8 hrs daily?") ? 2 : -2;
+            bonusYears += AskYesNo("Are you often stressed?") ? -3 : 0;
+            bonusYears += AskYesNo("Did your parents/grandparents live 85+?") ? 3 : 0;
+
+            int finalAge = lifeExpectancy + bonusYears;
+            DateTime deathDate = birthDate.AddYears(finalAge);
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($" Estimated Death Date for {name}: {deathDate}");
+
+            while (true)
+            {
+                TimeSpan timeLeft = deathDate - DateTime.Now;
+
+                if (timeLeft.TotalSeconds <= 0)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("💀 Your time has come...");
+                    Console.WriteLine(@"
+       _______
+    .-'       `-.
+   /           \\
+   |    R  I  P   |
+   |             |
+   |  " + name.PadRight(11) + @"|
+   |             |
+   |_____________|
+  //             \\
+ ^^               ^^
+");
+                    break;
+                }
+
+                string formatted = FormatTimeLeft(timeLeft);
+
+                Console.SetCursorPosition(0, 2);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("⏳ Time left: " + formatted + "                    ");
+
+                if (timeLeft.TotalSeconds < 10)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("⚠️ Almost there, prepare for your fate...");
+                }
+
+                Thread.Sleep(1000);
+            }
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
+        }
+
+        // Format TimeSpan nicely
+        static string FormatTimeLeft(TimeSpan span)
+        {
+            int years = span.Days / 365;
+            int days = span.Days % 365;
+            Console.Beep(400, 300);
+            return $"{years}y {days}d {span.Hours}h {span.Minutes}m {span.Seconds}s";
+        }
+
+        // Read an int with bounds and validation
+        static int ReadInt(string prompt, int min, int max)
+        {
+            int val;
+            while (true)
+            {
+                Console.Write(prompt);
+                if (int.TryParse(Console.ReadLine(), out val) && val >= min && val <= max)
+                    return val;
+                Console.WriteLine($" Please enter a valid number between {min} and {max}.");
+            }
+        }
+
+        // Yes/no question → bool
+        static bool AskYesNo(string question)
+        {
+            Console.Write(question + " (yes/no): ");
+            string ans = Console.ReadLine().ToLower();
+            return ans == "yes" || ans == "y";
+        }
+    }
+}
+
+
