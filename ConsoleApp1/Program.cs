@@ -853,6 +853,7 @@ namespace DeathClock
 
 
 //GPT version code .........
+/*
 
 using System;
 using System.Globalization;
@@ -978,5 +979,56 @@ namespace DeathClock
         }
     }
 }
+*/
 
+/*
+using System;
+using System.Threading;
+namespace ConsoleApp1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+           string name = "MRT 800";
+            //Console.WriteLine(name[0]);
+            //Console.WriteLine(name[1]);
+            //Console.WriteLine(name[2]);
+            //Console.WriteLine(name[3]);
+            //Console.WriteLine(name[4]);
+            //Console.WriteLine(name[5]);
+            //Console.WriteLine(name[6]);
+            //Console.WriteLine("\n");
 
+            // Using a loop to print each character in the string
+            for (int i=0; i<name.Length; i++)
+            {
+                Console.WriteLine(name[i]);
+                Console.Write(name[i]);
+                Thread.Sleep(500); // Adding a delay of 500 milliseconds between each character
+
+            }
+           
+
+        }
+    }
+}
+*/
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 5, 2, 9, 1, 5, 6 };
+
+        // Ascending order
+        Array.Sort(numbers);
+        Console.WriteLine("Ascending: " + string.Join(", ", numbers));
+
+        // Descending order
+        Array.Reverse(numbers);
+        Console.WriteLine("Descending: " + string.Join(", ", numbers));
+    }
+}
