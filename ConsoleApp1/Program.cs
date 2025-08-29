@@ -403,6 +403,41 @@ namespace ConsoleApp1
 */
 
 
+
+/*
+
+using System;
+namespace consoleApp1
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("press any char");
+            char ch = Console.ReadKey().KeyChar;
+            switch (char.ToLower(ch))
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    Console.WriteLine($"\n{ch} is a vowel");
+                    break;
+                default:
+                    Console.WriteLine($"\n{ch} is a consonant");
+                    break;
+
+            }
+
+        }
+
+    }
+}
+
+*/
+
+
 /*
 using System;
 namespace ConsoleApp1
@@ -1015,6 +1050,8 @@ namespace ConsoleApp1
 }
 */
 
+/*
+
 using System;
 
 class Program
@@ -1032,3 +1069,269 @@ class Program
         Console.WriteLine("Descending: " + string.Join(", ", numbers));
     }
 }
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            int[ , ] a = { { 11, 21, 32 },{ 45, 57, 60 }, { 12, 14, 15 }, { 14,16,96} };
+            for (int i = 0; i<4;i++)  // rows 
+            {
+                for (int j = 0; j < 3; j++) // columns
+
+                    Console.Write(a[i, j] + " ");
+                
+                Console.WriteLine();
+            }
+            
+        }
+    }
+
+}
+*/
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            int[][] a = new int[3][];
+            a[0]= new int[2] { 1, 2 };
+            a[1] = new int[3] { 3, 4,5 };
+            a[2] = new int[4] { 6, 7,8,9 };
+            for(int i=0; i<a.Length; i++)
+            {
+                for (int j=0; j<a[i].Length; j++)
+                {
+                    Console.Write(a[i][j]+" ");
+                }
+                Console.WriteLine();
+            }
+
+
+        }
+    }
+
+}
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            int[][] a = new int[3][];
+            a[0] = new int[2] { 1, 2 };
+            a[1] = new int[3] { 3,4,5 };
+            a[2] = new int[4] { 6, 7, 8, 9 };
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    Console.Write(a[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+
+        }
+    }
+
+}
+*/
+
+/*
+using System;
+namespace ConsoleApp1 {
+    public class  program
+    {
+        static void Main(string[] args)
+        {
+            int[] a1 = { 1, 2, 3, 4, 5 };
+            Console.WriteLine(string.Join(",", a1));
+
+            Object[] a = { 1, "hello", 'a', 4.5 }; //object array can hold different data types
+            Console.WriteLine("Original array: " + string.Join(", ", a));
+            Array.Reverse(a);
+            Console.WriteLine("Reversed array: " + string.Join(", ", a));
+        }
+
+    }
+
+}
+*/
+
+/*
+
+using System;
+namespace ConsoleAPp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            int[] a = { 3, 4, 5, 6, 7, 8 , 9 , 15,17, 23,33,51,97 };
+            
+            for (int i = 0; i < a.Length; i++)
+            {
+                int n = a[i];
+                bool prime = true;
+                for (int j = 2; j <= Math.Sqrt(n); j++) // Check divisibility up to the square root of n
+                {
+                    if (n % j == 0)
+                    {
+                        prime = false;
+                        break; // No need to check further, n is not prime
+                    }
+                   
+                }
+                if (prime)
+                {
+                    Console.WriteLine(a[i]+" is  prime");
+                }
+                else
+                {
+                    Console.WriteLine("not a prime = " + a[i]);
+                }
+            }
+        }
+    }
+}
+*/
+
+/*
+
+//class , object, method, encapsulation
+using System;
+namespace ConsoleApp1
+{
+       public class program
+    {
+        private int roll; 
+        private string name;
+
+        public void accept(int roll, string name) // this is a method
+        {
+            this.roll = roll;
+            this.name = name;
+        }
+        public void display() //this is another method
+        {
+            Console.WriteLine($"Name: {name}, Roll: {roll}");
+        }
+        static void Main(string[] args)
+        {
+            program student = new program(); //cerating object for class program
+            student.accept(101, "Abhishek");
+            student.display();
+
+            program std2 = new program(); // multiple object
+            std2.accept(102,"Andy");
+            std2.display();
+        }
+    }
+}
+
+
+*/
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        private int roll;
+        private string name;
+
+        program(){
+
+            roll = 1;
+            }
+        public void take(string name)
+        {
+                        this.name = name;
+        }
+        public void diaplay()
+        {
+            Console.WriteLine("name is  {0} and age is {1}", name, roll );
+        }
+
+        static void Main(string[] args)
+        {
+            program student = new program(); //cerating object for class program
+            student.take("abc");
+            student.diaplay();
+        }
+    }
+}
+*/
+
+/*
+
+using System;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        private int roll;
+        private string name;
+        program()
+        {
+            roll = 1;
+        }
+        program(string name):this() // constructor overloading, chaining (join 2 constructor)
+        {
+            
+            this.name = name;
+        }
+
+        public void diaplay()
+        {
+            Console.WriteLine("name is  {0} and age is {1}", name, roll);
+        }
+        static void Main(string[] args)
+        {
+            program student = new program("\nabc\n"); //cerating object for class program
+            
+            student.diaplay();
+        }
+    }
+}
+*/
+
+
+
+using System;
+namespace ConsoleApp1 { 
+    abstract class bank
+    {
+        public abstract void Credit();
+        public abstract void Debit();
+        public abstract void checkBalance();
+        void welcome()
+        {
+            Console.WriteLine("Welcome to the bank");
+        }
+    }
+}
+
+
+
+
+
+
