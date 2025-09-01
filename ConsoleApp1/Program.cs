@@ -1315,21 +1315,423 @@ namespace ConsoleApp1
 */
 
 
-
+/*
 using System;
-namespace ConsoleApp1 { 
-    abstract class bank
+
+namespace ConsoleApp1
+{
+    abstract class Bank  // abstract class
     {
-        public abstract void Credit();
-        public abstract void Debit();
-        public abstract void checkBalance();
-        void welcome()
+        internal int b = 5000;
+
+        public abstract void Credit(int amt);
+        public abstract void Debit(int amt);
+        public abstract void Login(int code);
+        public abstract void CheckBalance(int amt);
+
+        public void Welcome() // non-abstract method
         {
             Console.WriteLine("Welcome to the bank");
         }
     }
+
+    abstract class BankImplement : Bank
+    {
+        public override void Credit(int amt)
+        {
+            b += amt; // Use parameter instead of hardcoded 12000
+        }
+
+        public override void Debit(int amt)
+        {
+            b -= amt; // Use parameter instead of hardcoded 10000
+        }
+
+        public override void Login(int code)
+        {
+            if (code == 1234)
+            {
+                Console.WriteLine("Login successful");
+            }
+            else
+            {
+                Console.WriteLine("Login failed");
+            }
+        }
+
+        public override void CheckBalance(int amt)
+        {
+            Console.WriteLine("Balance is " + b);
+        }
+    }
+
+    abstract class Customer : Bank
+    {
+        public string Name;
+        public int CustomerID;
+
+        public Customer(string name, int id)
+        {
+            this.Name = name;
+            this.CustomerID = id;
+        }
+
+        public void CustomerInfo()
+        {
+            Console.WriteLine("Customer Name: " + Name);
+            Console.WriteLine("Customer ID: " + CustomerID);
+        }
+    }
+
+    class CustomerImplement : BankImplement
+    {
+        public string Name;
+
+        public CustomerImplement(string name)
+        {
+            Name = name;
+        }
+
+        public void ShowCustomer()
+        {
+            Console.WriteLine("Customer: " + Name);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CustomerImplement customer = new CustomerImplement("Abhi T");
+            customer.Welcome();
+            customer.Login(1234);
+            customer.Credit(2000);
+            customer.Debit(1000);
+            customer.CheckBalance(0);
+            customer.ShowCustomer();
+        }
+    }
 }
 
+*/
+
+
+
+/*
+using System;
+using System.Diagnostics;
+namespace ConsoleApp1
+{
+    internal class Animal
+    {
+        public Animal(string speak)
+        {
+            Console.WriteLine("Animal speaks = " + speak);
+        }
+        public virtual void Bark()
+        {
+            Console.WriteLine("animal barks");
+        }
+    }
+    internal class Dog : Animal
+    {
+        public Dog() : base("Bark")
+        {
+            Console.WriteLine("barking dog");
+
+        }
+        public override void Bark()
+        {
+            Console.WriteLine("dog Barks baka!");
+        }
+
+        public static void Main(string[] args)
+        {
+            Animal d = new Dog();
+            d.Bark();
+
+        }
+    }
+}
+*/
+
+
+/*
+
+using System;
+namespace ConsoleApp1
+{
+    interface IAnimal
+    {
+        void Speak();
+        void Eat();
+    }
+
+    interface Travel
+    {
+        void Travel();
+    }
+    public class Dog : IAnimal, Travel
+    {
+        public void Speak()
+        {
+            Console.WriteLine("wooof wooof ");
+        }
+        public void Eat()
+        {
+            Console.WriteLine("Dog eats");
+        }
+        public void Travel()
+        {
+            Console.WriteLine("Running");
+        }
+
+    }
+    public class Cat : IAnimal, Travel
+    {
+        public void Speak()
+        {
+            Console.WriteLine("mew meeeew");
+        }
+        public void Eat()
+        {
+            Console.WriteLine("Cat eats");
+        }
+        public void Travel()
+        {
+            Console.WriteLine("Jumping");
+        }
+    }
+
+        public class program
+        {
+            static void Main(string[] args)
+            {
+                IAnimal d = new Dog();
+                d.Eat();
+                d.Speak();
+                Travel t = new Dog();
+                t.Travel();
+                IAnimal c = new Cat();
+                c.Eat();
+                c.Speak();
+                Travel t1 = new Cat();
+                t1.Travel();
+
+            }
+
+        }
+    
+}
+
+*/
+
+/*
+using System;
+using System.Threading.Channels;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+
+            try
+            {
+                double a, b, c;
+            Console.WriteLine("enter 2 no. ");
+            a = Convert.ToDouble(Console.ReadLine());
+            b = Convert.ToDouble(Console.ReadLine());
+
+                    c = (a / b);
+                Console.WriteLine(c);
+            }
+            catch(FormatException ex) {
+                Console.WriteLine("enter numbers only");
+            }
+            catch (DivideByZeroException e) { 
+            Console.WriteLine("Error. please enter valid numbers.");
+            }
+            finally
+            {
+                Console.WriteLine("program successfully execute");
+            }
+
+        }
+    }
+}
+*/
+
+/*
+using System;
+using System.Collections;
+namespace App1
+{
+    public class program 
+    {
+        public static void Main(String[] Args)
+        {
+            ArrayList list = new ArrayList();
+            list.Add(1);
+            list.Add(2);
+            list.Add(3.623);
+            list.Add("hello");
+            
+            foreach (object items in list)
+            {
+                Console.WriteLine(items);
+            }
+            list.Remove(2);
+            foreach (object items in list)
+            {
+                Console.WriteLine(items);
+            }
+        }
+    }
+}
+
+*/
+
+
+/*
+using System;
+using System.Collections;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add(1, "Abhi");
+            ht.Add(2, "Andy");
+            ht.Add(3, "Amit");
+            ht.Add(4, "Ankit");
+            foreach (DictionaryEntry items in ht)
+            {
+                Console.WriteLine(items.Key + " " + items.Value);
+            }
+        }
+    }
+
+}
+
+*/
+
+
+/*
+
+using System;
+using System.Collections;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            Dictionary<int, string> ht = new Dictionary<int, string>();
+            ht.Add(1, "Abhi");
+            ht.Add(2, "Andy");
+            ht.Add(3, "Amit");
+            ht.Add(4, "Ankit");
+            foreach (var items in ht)
+            {
+                Console.WriteLine(items.Key + " " + items.Value);
+            }
+        }
+    }
+
+}
+*/
+
+/*
+using System;
+using System.Collections;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            Stack st = new Stack();
+            st.Push(1);
+            st.Push("hello");
+            st.Push(3.14);
+            st.Push('a');
+            foreach (var items in st)
+            {
+                Console.WriteLine(items);
+            }
+            st.Pop();
+            st.Pop();
+            foreach (var items in st)
+            {
+                Console.WriteLine(items);
+            }
+
+        }
+    }
+
+}
+
+*/
+
+
+
+/*
+using System;
+using System.Collections;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            Queue q = new Queue();
+            q.Enqueue(1);
+            
+            q.Enqueue("hello");
+            q.Enqueue(3.14);
+            q.Enqueue('a');
+            foreach (var items in q)
+            {
+                Console.WriteLine(items);
+            }
+            q.Dequeue();
+            q.Dequeue();
+            foreach (var items in q)
+            {
+                Console.WriteLine(items);
+            }
+
+        }
+    }
+
+}
+*/
+
+
+
+
+
+using System;
+using System.Collections;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            FileInfo fo =new FileInfo("C:\\Users\\abhis\\OneDrive\\Desktop\\file.txt");
+            FileStream fs = fo.Open(FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine("hello this is abhi");
+            sw.Close();
+            Console.WriteLine("file edit");
+        }
+
+    }
+}
 
 
 
