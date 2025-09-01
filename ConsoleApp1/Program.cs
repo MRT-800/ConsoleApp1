@@ -1713,7 +1713,7 @@ namespace ConsoleApp1
 
 
 
-
+/*
 using System;
 using System.Collections;
 namespace ConsoleApp1
@@ -1732,6 +1732,126 @@ namespace ConsoleApp1
 
     }
 }
+
+*/
+
+
+// write all text use in file  (replace previous contents)
+/*
+using System;
+using System.IO;
+namespace ConsoleApp1 { 
+public class program
+    {
+        public static void Main(string [] args)
+        {
+            String path = "C:\\Users\\abhis\\OneDrive\\Desktop\\file.txt";
+            string content= "привет, это я MR.T-800 ";
+            File.WriteAllText(path, content);
+            Console.WriteLine("file created and modified ");
+        }
+
+    }
+}
+
+*/
+
+//append all text use in file(add more info on same)
+/*
+using System;
+using System.IO;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            String path = "C:\\Users\\abhis\\OneDrive\\Desktop\\file.txt";
+            string content = "yes this is me mrt 800 ";
+            File.AppendAllText(path, content);
+            Console.WriteLine("file created and modified ");
+        }
+
+    }
+}
+*/
+
+
+//read all text use in file
+/*
+using System;
+using System.IO;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            String path = "C:\\Users\\abhis\\OneDrive\\Desktop\\file.txt";
+            string content = File.ReadAllText(path);
+            
+            Console.WriteLine("File content : "+content);
+        }
+
+    }
+}*/
+
+
+
+
+//use of stream writer to write in file
+/*
+ 
+using System;
+using System.IO;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            String path = "C:\\Users\\abhis\\OneDrive\\Desktop\\file.txt";
+            string[] content = File.ReadAllLines(path);
+            using (StreamWriter sw = new StreamWriter(path,true)) //true is used to append the text
+            {
+                sw.WriteLine("i am abhi t  ");
+            }
+            Console.WriteLine("Added");
+        }
+
+    }
+}
+
+*/
+
+
+
+//use of stream reader to read from file
+
+/*
+using System;
+using System.IO;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            string path = "C:\\Users\\abhis\\OneDrive\\Desktop\\file.txt";
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string line;
+                while((line=sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+        }
+    }
+}
+
+*/
+
 
 
 
