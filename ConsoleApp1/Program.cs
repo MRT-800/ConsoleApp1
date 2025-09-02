@@ -1854,6 +1854,69 @@ namespace ConsoleApp1
 
 
 
+//delegates(function pointer) and events 
+
+
+/*
+using System;
+namespace ConsoleApp1
+{
+    internal class program
+    {
+        public void Function()
+        {
+            Console.WriteLine("Function");
+        }
+
+        public void Function1()
+        {
+            Console.WriteLine("Function1");
+        }
+
+
+        public delegate void del(); //delegate declaration
+        static void Main(string[] args)
+        {
+            program program = new program();
+            del de = new del(program.Function); //delegate instantiation
+            de+=program.Function1; //delegate call
+            de(); //delegate call
+            de-= program.Function; //remove function from delegate
+            de();
+            Console.WriteLine();
+        }
+    }
+}
+*/
+
+
+
+using System;
+namespace ConsoleApp1
+{
+    public class program
+    {
+        public delegate String del(String s1, String S2);
+        event del myevent;
+        public program()
+        {
+            this.myevent += program_myEvent;
+        }
+        private string program_myEvent(string s1, string S2)
+        {
+            return s1 + S2;
+
+        }
+        public static void Main(string[] args)
+        {
+            program program = new program();
+            string result = program.myevent(" abhi ", " t-800 ");
+            Console.WriteLine(result);
+        }
+    }
+}
+
+
 
 
 
